@@ -6,7 +6,13 @@
   </ion-toolbar>
 </ion-header>
 
-<p>
-  film-view works!
-</p>
+<ion-content [fullscreen]="true">
+  <ion-list class="list-group-item">
+    <ion-item *ngFor="let item of dataThema; let i = index">
+      <ion-label>
+        <h2> {{item.name}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
 

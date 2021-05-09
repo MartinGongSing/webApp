@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ThemaService } from '../service/thema.service';
 
 @Component({
   selector: 'app-film-view',
@@ -7,8 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilmViewComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() {}
+  @Input() themaName!: string;
+  @Input() indexOfthema!: number;
+
+
+  isAuth = false;
+  themas?: any[];
+  dataThema:any=[];
+
+  constructor(private themaService: ThemaService){
+    setTimeout(
+      () => {
+        this.isAuth=true;
+      }, 2000
+  );
+  this.themaService.getThemas().subscribe(thema=>{
+    console.warn(thema);
+    this.dataThema=thema;
+    
+  })
+}
+
+  ngOnInit(): void {
+  }
+
 
 }
