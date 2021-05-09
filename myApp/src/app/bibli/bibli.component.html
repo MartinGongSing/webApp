@@ -3,16 +3,32 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Bibli
+      Bibliothèque de films
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
-  <p>
-    bibli works!
-  </p>
+
+
+  <ion-list class="list-group-item">
+    <ion-item *ngFor="let item of dataTest; let i = index">
+      <ion-label>
+        <h2>{{i}}) {{item.Title}} - {{item.Year}} </h2>
+        <p>Genre : {{item.thema.name}} - {{item.Actor}} </p>
+      </ion-label>
+
+    </ion-item>
+
+  
+ 
+   
+
+    <!-- <h2 [ngStyle]="{color: getColor()}">{{indexOfFilm}}) {{ filmName }} - {{filmYear}} </h2>
+    <h4>Genre : {{getGenre()}} - {{filmActor}}</h4> -->
+  </ion-list>
+
 
 </ion-content>
 
