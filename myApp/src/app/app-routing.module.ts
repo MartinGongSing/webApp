@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { BibliComponent } from './bibli/bibli.component';
 import { FilmViewComponent } from './film-view/film-view.component';
+import { NewFilmsComponent } from './new-films/new-films.component';
+import { NewThemesComponent } from './new-themes/new-themes.component';
 import { ThemaViewComponent } from './thema-view/thema-view.component';
 
 const routes: Routes = [
@@ -20,6 +22,14 @@ const routes: Routes = [
   {
     path: 'thema',
     component: ThemaViewComponent
+  },
+  {
+    path: 'newThemes',
+    component: NewThemesComponent
+  },
+  {
+    path: 'newFilms',
+    component: NewFilmsComponent
   },
 ];
 @NgModule({

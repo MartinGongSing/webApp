@@ -24,7 +24,7 @@ export class FilmViewComponent implements OnInit {
       }, 2000
   );
   this.themaService.getThemas().subscribe(thema=>{
-    console.warn(thema);
+    // console.warn(thema);
     this.dataThema=thema;
     
   })
